@@ -24,3 +24,7 @@ beforeEach(function () {
     cy.visit(" https://calculator-web.azurewebsites.net/");
     cy.reload();
 })
+
+afterEach(function () {
+    cy.screenshot()
+})
