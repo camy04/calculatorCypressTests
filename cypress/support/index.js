@@ -22,4 +22,5 @@ import './commands'
 
 beforeEach(function () {
     cy.visit(" https://calculator-web.azurewebsites.net/");
+    cy.reload();
 })
