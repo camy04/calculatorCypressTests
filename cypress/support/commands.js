@@ -24,18 +24,22 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+//TODO - fix this maybe don't pass iframe arg
+Cypress.Commands.add('clickCalculate', (iframe) => {
+    cy.get(iframe).within(function($iFrame){
+        const iFrameContent = $iFrame.contents().find('body') 
+
+        cy.wrap(iFrameContent).click()
+    })
+})
+
 //cypress function to add values
 Cypress.Commands.add('add', (firstValue, secondValue) => {
     cy.get('#leftNumber').type(firstValue);
     cy.get('#rightNumber').type(secondValue);
     cy.get('#operator').select('+');
 
-    //this can become its own function
-    cy.get('iframe').within(function($iFrame){
-        const iFrameContent = $iFrame.contents().find('body') 
-
-        cy.wrap(iFrameContent).click()
-    })
+    cy.clickCalculate('iframe')
 
     return cy.get('.result')
 })
@@ -45,12 +49,27 @@ Cypress.Commands.add('subtract', (firstValue, secondValue) => {
     cy.get('#rightNumber').type(secondValue);
     cy.get('#operator').select('-');
 
-    //this can become its own function
-    cy.get('iframe').within(function($iFrame){
-        const iFrameContent = $iFrame.contents().find('body') 
+    cy.clickCalculate('iframe')
 
-        cy.wrap(iFrameContent).click()
-    })
+    return cy.get('.result')
+})
+
+Cypress.Commands.add('multiply', (firstValue, secondValue) => {
+    cy.get('#leftNumber').type(firstValue);
+    cy.get('#rightNumber').type(secondValue);
+    cy.get('#operator').select('*');
+
+    cy.clickCalculate('iframe')
+
+    return cy.get('.result')
+})
+
+Cypress.Commands.add('divide', (firstValue, secondValue) => {
+    cy.get('#leftNumber').type(firstValue);
+    cy.get('#rightNumber').type(secondValue);
+    cy.get('#operator').select('/');
+
+    cy.clickCalculate('iframe')
 
     return cy.get('.result')
 })
