@@ -1,0 +1,23 @@
+{
+  "name": "calculatorappcypresstests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress_test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camy04/calculatorCypressTests.git"
+  },
+  "author": "camy04",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/camy04/calculatorCypressTests/issues"
+  },
+  "homepage": "https://github.com/camy04/calculatorCypressTests#readme",
+  "devDependencies": {
+    "cypress": "^7.1.0",
+    "mochawesome": "^6.2.2"
+  }
+}

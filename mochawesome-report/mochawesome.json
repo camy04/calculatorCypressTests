@@ -1,0 +1,173 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2021-04-14T13:06:17.387Z",
+    "end": "2021-04-14T13:06:41.681Z",
+    "duration": 24294,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8ed54dee-ce1d-4492-ac77-a2441241c52c",
+      "title": "",
+      "fullFile": "cypress/integration/specs/testIntegers.js",
+      "file": "cypress/integration/specs/testIntegers.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c68e2766-530b-4763-a375-f1789fae2d53",
+          "title": "Calculator - Test Integers",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test - Add Integers",
+              "fullTitle": "Calculator - Test Integers Test - Add Integers",
+              "timedOut": null,
+              "duration": 5479,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.add('2', '4').should('have.value', '6');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<input.result>' to have value '6', but the value was ''",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<input.result>' to have value '6', but the value was ''\n    at Context.eval (https://calculator-web.azurewebsites.net/__cypress/tests?p=cypress/integration/specs/testIntegers.js:101:22)",
+                "diff": "+ '6'\n"
+              },
+              "uuid": "ab5f76b4-a8f3-41f6-a007-542d393a7cf5",
+              "parentUUID": "c68e2766-530b-4763-a375-f1789fae2d53",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - Subtract Integers",
+              "fullTitle": "Calculator - Test Integers Test - Subtract Integers",
+              "timedOut": null,
+              "duration": 5123,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.subtract('2', '4').should('have.value', '-2');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<input.result>' to have value '-2', but the value was ''",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<input.result>' to have value '-2', but the value was ''\n    at Context.eval (https://calculator-web.azurewebsites.net/__cypress/tests?p=cypress/integration/specs/testIntegers.js:104:27)",
+                "diff": "+ '-2'\n"
+              },
+              "uuid": "2b8f5610-c449-49e1-9591-63ffbb65fd35",
+              "parentUUID": "c68e2766-530b-4763-a375-f1789fae2d53",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - Multiply Integers",
+              "fullTitle": "Calculator - Test Integers Test - Multiply Integers",
+              "timedOut": null,
+              "duration": 5138,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.multiply('2', '2').should('have.value', '4');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<input.result>' to have value '4', but the value was ''",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<input.result>' to have value '4', but the value was ''\n    at Context.eval (https://calculator-web.azurewebsites.net/__cypress/tests?p=cypress/integration/specs/testIntegers.js:107:27)",
+                "diff": "+ '4'\n"
+              },
+              "uuid": "cb654ef4-f5a4-413e-87b4-3369fcb38a47",
+              "parentUUID": "c68e2766-530b-4763-a375-f1789fae2d53",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test - Divide Integers",
+              "fullTitle": "Calculator - Test Integers Test - Divide Integers",
+              "timedOut": null,
+              "duration": 5098,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.divide('4', '2').should('have.value', '2');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<input.result>' to have value '2', but the value was ''",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<input.result>' to have value '2', but the value was ''\n    at Context.eval (https://calculator-web.azurewebsites.net/__cypress/tests?p=cypress/integration/specs/testIntegers.js:110:25)",
+                "diff": "+ '2'\n"
+              },
+              "uuid": "e8ba1116-4fff-42b2-8755-6d92c375a6d4",
+              "parentUUID": "c68e2766-530b-4763-a375-f1789fae2d53",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ab5f76b4-a8f3-41f6-a007-542d393a7cf5",
+            "2b8f5610-c449-49e1-9591-63ffbb65fd35",
+            "cb654ef4-f5a4-413e-87b4-3369fcb38a47",
+            "e8ba1116-4fff-42b2-8755-6d92c375a6d4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20838,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}
