@@ -20,11 +20,11 @@ import './commands'
 // require('./commands')
 
 
-beforeEach(function () {
-    cy.visit(" https://calculator-web.azurewebsites.net/");
-    cy.reload();
-})
+// beforeEach(function () {
+//     cy.visit(" https://calculator-web.azurewebsites.net/");
+//     cy.reload();
+// })
 
-afterEach(function () {
-    cy.screenshot()
-})
+// afterEach(function () {
+//     cy.screenshot()
+// })

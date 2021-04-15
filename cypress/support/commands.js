@@ -1,6 +1,6 @@
 Cypress.Commands.add('clickCalculate', () => {
     cy.get('iframe').within(function($iFrame){
-        const iFrameContent = $iFrame.contents().find('body') 
+        const iFrameContent = $iFrame.contents().find('button') 
 
         cy.wrap(iFrameContent).click()
     })
