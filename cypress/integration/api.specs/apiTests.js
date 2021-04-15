@@ -17,9 +17,7 @@ describe('API tests for Integers', function() {
             }
         }).then(function(response) {
             expect(response).to.have.property('status', 200)
-            expect(response.body).to.deep.equal( {
-                "value" : 6
-            });
+            expect(response.body).to.have.property('value', 6)
         })
     })
 
