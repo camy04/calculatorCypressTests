@@ -1,47 +1,36 @@
 pipeline {
 
     agent any
+    tools {nodejs "node15"}
 
     stages {
         
-         stage("Checkout scm") {
+         stage("Run cypress tests") {
 
-             steps {
-                echo 'my first jenkins job'
+             steps { 
+                echo 'Run cypress api and fromtend tests'
+                sh "npm install cypress"
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh "cypress run --reporter mochawesome"
+                    echo 'tests failed'
+                }
              }
 
          }
 
-         stage("Run API tests") {
+         stage("Publish Test results ") {
 
              steps {
-                echo 'my first jenkins job'
+                echo 'Publishing Test results'
+                publishHTML target : [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'mochawesome-report',
+                    reportFiles: 'mochawesome.html',
+                    reportName: 'Test Results',
+                ]
              }
-
-         }
-
-         stage("Publish API test results") {
-
-             steps {
-                echo 'my first jenkins job'
-             }
-
-         }
-
-         stage("Run FE tests") {
-
-             steps {
-                echo 'my first jenkins job'
-             }
-
-         }
-
-         stage("Publish FE test results ") {
-
-             steps {
-                echo 'my first jenkins job'
-             }
-
          }
 
     }
