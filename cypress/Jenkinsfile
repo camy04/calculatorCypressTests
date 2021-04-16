@@ -1,0 +1,32 @@
+pipeline {
+
+    agent any
+
+    stages {
+        
+         stage("Checkout scm") {
+
+             steps {
+                echo 'my first jenkins job'
+             }
+
+         }
+
+         stage("Run API tests") {
+
+         }
+
+         stage("Publish API test results") {
+
+         }
+
+         stage("Run FE tests") {
+
+         }
+
+         stage("Publish FE test results ") {
+
+         }
+
+    }
+}
