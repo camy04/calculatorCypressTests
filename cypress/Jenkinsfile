@@ -14,17 +14,33 @@ pipeline {
 
          stage("Run API tests") {
 
+             steps {
+                echo 'my first jenkins job'
+             }
+
          }
 
          stage("Publish API test results") {
+
+             steps {
+                echo 'my first jenkins job'
+             }
 
          }
 
          stage("Run FE tests") {
 
+             steps {
+                echo 'my first jenkins job'
+             }
+
          }
 
          stage("Publish FE test results ") {
+
+             steps {
+                echo 'my first jenkins job'
+             }
 
          }
 
