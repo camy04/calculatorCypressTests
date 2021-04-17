@@ -29,14 +29,25 @@ By default, cypress run will run all tests headlessly in the Electron browser.
 apiTests.js is our spec file in this case that we want to run from command line
 
 ## Test Reports
-### Cypress test runner dashboard and reports
 
 ### Mochawesome html test reports
 
 ## Screenshots
+1. Cypress comes with the ability to take screenshots, whether you are running via cypress open or cypress run.
+2. To take screenshots only when test fails, we've added **screenshotOnRunFailure** to our cypress.json config and set the value to true.  
+3. Screenshots are stored in the screenshotsFolder which is set to cypress/screenshots by default.
+4. The screenshot config setting doesn't apply to cypress test runner so when running cypress tests locally, we'll have to use cypress run instead of cypress open.  
+For eg: **npx cypress run --spec "cypress/integration/api.spces/apiTests.js'** 
+
 
 ## Videos
+1. Cypress records a video for each spec file when running tests during cypress run. Videos are not automatically recorded during cypress open.  
+2. Videos are stored in the videosFolder which is set to cypress/videos by default.  
+3. After cypress run completes, Cypress automatically compresses the video in order to save on file size. By default it compresses to a 32 CRF, but this is configurable with the videoCompression property.
+4. When using the --record flag while running your tests, videos are processed, compressed, and uploaded to the Dashboard Service after every spec file runs, successful or not. To change this behavior to only process videos in the case that tests fail, set the videoUploadOnPasses configuration option to false.
+5. Cypress clears any existing videos before a cypress run. If you do not want to clear your videos folder before a run, you can set trashAssetsBeforeRuns to false.
 
+## Dashboard
 ## Running tests on CI (Jenkins):
 
 

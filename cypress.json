@@ -1,5 +1,6 @@
 {
     "reporter": "mochawesome",
+    "screenshotOnRunFailure": true,
     "retries": {
         "runMode": 2,
         "openMode": 1
