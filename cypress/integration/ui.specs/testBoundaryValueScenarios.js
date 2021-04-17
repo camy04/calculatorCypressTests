@@ -1,6 +1,7 @@
 //Boundary value scenarios
 
 describe('Calculator Test - Addition max values', function() {
+
     it('Visit the calc app', function() {
         cy.visit(" https://calculator-web.azurewebsites.net/");
 

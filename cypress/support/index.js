@@ -19,12 +19,3 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-
-// beforeEach(function () {
-//     cy.visit(" https://calculator-web.azurewebsites.net/");
-//     cy.reload();
-// })
-
-// afterEach(function () {
-//     cy.screenshot()
-// })

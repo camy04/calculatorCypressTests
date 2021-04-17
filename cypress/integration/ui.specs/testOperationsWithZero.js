@@ -1,5 +1,9 @@
 describe('Calculator - Test Operations with 0', function() {
 
+    beforeEach(function () {
+        cy.visit(Cypress.env('frontendUrl'))
+    })
+    
     it('Test - Add 0 to an Integer', function() {      
         cy.add('11', '0').should('have.value', '11')
     })

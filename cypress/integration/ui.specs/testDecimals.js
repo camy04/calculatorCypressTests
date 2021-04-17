@@ -1,5 +1,9 @@
 describe('Calculator - Test Integers', function() {
 
+    beforeEach(function () {
+        cy.visit(Cypress.env('frontendUrl'))
+    })
+    
     it('Test - Add Decimals', function() {      
         cy.add('22.4', '44.5').should('have.value', '66.9')
     })

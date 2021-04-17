@@ -1,3 +1,11 @@
 {
-    "reporter": "mochawesome"
+    "reporter": "mochawesome",
+    "retries": {
+        "runMode": 2,
+        "openMode": 1
+    },
+    "env": {
+        "apiUrl": "https://calculator-api.azurewebsites.net/api/Calculate",
+        "frontendUrl": "https://calculator-web.azurewebsites.net/"
+    }
 }

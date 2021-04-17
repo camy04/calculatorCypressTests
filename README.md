@@ -37,7 +37,7 @@ apiTests.js is our spec file in this case that we want to run from command line
 
 ## Videos
 
-## Running tests in CI (Jenkins):
+## Running tests on CI (Jenkins):
 
 
 

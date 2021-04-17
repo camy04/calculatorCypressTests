@@ -1,5 +1,6 @@
 describe('API tests for Integers', function() {
     
+    const calApi = Cypress.env('apiUrl')
     it('verify add integers', function() {
 
         const reqbody = {
@@ -10,7 +11,7 @@ describe('API tests for Integers', function() {
 
         cy.request( {
             method : 'POST',
-            url : ' https://calculator-api.azurewebsites.net/api/Calculate',
+            url : calApi,
             body : reqbody,
             headers : {
                 'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
@@ -31,7 +32,7 @@ describe('API tests for Integers', function() {
 
         cy.request( {
             method : 'POST',
-            url : ' https://calculator-api.azurewebsites.net/api/Calculate',
+            url : calApi,
             body : reqbody,
             headers : {
                 'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
@@ -54,7 +55,7 @@ describe('API tests for Integers', function() {
 
         cy.request( {
             method : 'POST',
-            url : ' https://calculator-api.azurewebsites.net/api/Calculate',
+            url : calApi,
             body : reqbody,
             headers : {
                 'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
@@ -77,7 +78,7 @@ describe('API tests for Integers', function() {
 
         cy.request( {
             method : 'POST',
-            url : ' https://calculator-api.azurewebsites.net/api/Calculate',
+            url : calApi,
             body : reqbody,
             headers : {
                 'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
@@ -99,7 +100,7 @@ describe('API tests for Integers', function() {
 
         cy.request( {
             method : 'POST',
-            url : ' https://calculator-api.azurewebsites.net/api/Calculate',
+            url : calApi,
             body : reqbody,
             headers : {
                 'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
@@ -121,7 +122,7 @@ describe('API tests for Integers', function() {
 
         cy.request( {
             method : 'POST',
-            url : ' https://calculator-api.azurewebsites.net/api/Calculate',
+            url : calApi,
             body : reqbody,
             headers : {
                 'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
@@ -143,7 +144,7 @@ describe('API tests for Integers', function() {
 
         cy.request( {
             method : 'POST',
-            url : ' https://calculator-api.azurewebsites.net/api/Calculate',
+            url : calApi,
             body : reqbody,
             headers : {
                 'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
@@ -165,7 +166,7 @@ describe('API tests for Integers', function() {
 
         cy.request( {
             method : 'POST',
-            url : ' https://calculator-api.azurewebsites.net/api/Calculate',
+            url : calApi,
             body : reqbody,
             headers : {
                 'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
@@ -187,7 +188,7 @@ describe('API tests for Integers', function() {
 
         cy.request( {
             method : 'POST',
-            url : ' https://calculator-api.azurewebsites.net/api/Calculate',
+            url : calApi,
             body : reqbody,
             headers : {
                 'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
