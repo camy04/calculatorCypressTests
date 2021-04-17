@@ -12,12 +12,20 @@ This readme explains you how to run front end and api tests for Calculator app a
 2. To enable editing support for cypress in VSC, install the following extensions: 'Cypress Helper' and 'Cypress Snippets'
 
 ## Running tests using cypress test runner
-1. To run tests via a GUI interface, on terminal run 'npx cypress open'. This will launch the cypress test runner where you can choose to either run the invidual spec/tests files or the whole suite 
+1. To run tests via a GUI interface, on terminal run 'npx cypress open'. This will launch the cypress test runner where you can choose to either run the invidual spec/tests files or the whole suite
+ Please note that in a cypress based project all the tests/specs should reside withing 'integration' folder.
    ![](/cypress/images/cypressgui.png)
-2. All the tests/specs reside withing cypress/integration folder which is the default location for adding tests on a cypress based project
+
 
 ## Running tests from CLI
-   
+### To run the entire etts suite from CLI use:
+ 'npx cypress run'. 
+By default, cypress run will run all tests headlessly in the Electron browser.
+ Please note this will run every tests inside the integration folder
+
+### To run a specific spec file from CLI use:
+ 'npx cypress run --spec "cypress/integration/api.spces/apiTests.js'
+apiTests.js is our spec file in this case that we want to run from command line
 
 
 
