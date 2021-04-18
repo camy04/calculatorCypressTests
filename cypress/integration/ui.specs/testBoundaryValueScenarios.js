@@ -1,65 +1,25 @@
-//Boundary value scenarios
+describe('Calculator - test boundary values', function() {
 
-describe('Calculator Test - Addition max values', function() {
-
-    it('Visit the calc app', function() {
-        cy.visit(" https://calculator-web.azurewebsites.net/");
-
-        cy.get('#leftNumber').type("999");
-        cy.get('#rightNumber').type("999");
-        cy.get('#operator').select('+');
-
-        cy.get('iframe').within(function($iFrame){
-            const iFrameContent = $iFrame.contents().find('body') 
-
-            cy.wrap(iFrameContent).click()
-        })
-
-        cy.get('#rightNumber').type("999");
-        cy.get('#operator').select('-');
-
-        cy.get('iframe').within(function($iFrame){
-            const iFrameContent = $iFrame.contents().find('body') 
-
-            cy.wrap(iFrameContent).click()
-        })
-
-        cy.get('.result').should('have.value', '0');
+    beforeEach(function () {
+        cy.visit(Cypress.env('frontendUrl'))
     })
-})
+    
+    //Calculator app can only input 3 digits
 
-describe('Calculator Test - Multiplication max values', function() {
-    it('Visit the calc app', function() {
-        cy.visit(" https://calculator-web.azurewebsites.net/");
-
-        cy.get('#leftNumber').type("999");
-        cy.get('#rightNumber').type("999");
-        cy.get('#operator').select('*');
-
-        cy.get('iframe').within(function($iFrame){
-            const iFrameContent = $iFrame.contents().find('body') 
-
-            cy.wrap(iFrameContent).click()
-        })
-
-        cy.get('.result').should('have.value', '998001');
+    it('add max value integers', function() {      
+        cy.add('999', '999').should('have.value', '1998')
     })
-})
 
-describe('Calculator Test - Division max values', function() {
-    it('Visit the calc app', function() {
-        cy.visit(" https://calculator-web.azurewebsites.net/");
-
-        cy.get('#leftNumber').type("999");
-        cy.get('#rightNumber').type("999");
-        cy.get('#operator').select('/');
-
-        cy.get('iframe').within(function($iFrame){
-            const iFrameContent = $iFrame.contents().find('body') 
-
-            cy.wrap(iFrameContent).click()
-        })
-
-        cy.get('.result').should('have.value', '1');
+    it('subtract max value integers', function() {      
+        cy.subtract('999', '999').should('have.value', '0')
     })
+
+    it('multiply max value integers', function() {
+        cy.multiply('999', '999').should('have.value', '998001')
+    })
+    
+    it('divide integers', function() {
+        cy.divide('999', '999').should('have.value', '1')
+    })
+
 })

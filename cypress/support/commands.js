@@ -7,9 +7,9 @@ Cypress.Commands.add('clickCalculate', () => {
 })
 
 Cypress.Commands.add('add', (firstValue, secondValue) => {
-    cy.get('#leftNumber').type(firstValue);
-    cy.get('#rightNumber').type(secondValue);
-    cy.get('#operator').select('+');
+    cy.get('#leftNumber').type(firstValue)
+    cy.get('#rightNumber').type(secondValue)
+    cy.get('#operator').select('+')
 
     cy.clickCalculate()
 
@@ -17,9 +17,9 @@ Cypress.Commands.add('add', (firstValue, secondValue) => {
 })
 
 Cypress.Commands.add('subtract', (firstValue, secondValue) => {
-    cy.get('#leftNumber').type(firstValue);
-    cy.get('#rightNumber').type(secondValue);
-    cy.get('#operator').select('-');
+    cy.get('#leftNumber').type(firstValue)
+    cy.get('#rightNumber').type(secondValue)
+    cy.get('#operator').select('-')
 
     cy.clickCalculate()
 
@@ -27,9 +27,9 @@ Cypress.Commands.add('subtract', (firstValue, secondValue) => {
 })
 
 Cypress.Commands.add('multiply', (firstValue, secondValue) => {
-    cy.get('#leftNumber').type(firstValue);
-    cy.get('#rightNumber').type(secondValue);
-    cy.get('#operator').select('*');
+    cy.get('#leftNumber').type(firstValue)
+    cy.get('#rightNumber').type(secondValue)
+    cy.get('#operator').select('*')
 
     cy.clickCalculate()
 
@@ -37,9 +37,9 @@ Cypress.Commands.add('multiply', (firstValue, secondValue) => {
 })
 
 Cypress.Commands.add('divide', (firstValue, secondValue) => {
-    cy.get('#leftNumber').type(firstValue);
-    cy.get('#rightNumber').type(secondValue);
-    cy.get('#operator').select('/');
+    cy.get('#leftNumber').type(firstValue)
+    cy.get('#rightNumber').type(secondValue)
+    cy.get('#operator').select('/')
 
     cy.clickCalculate()
 
