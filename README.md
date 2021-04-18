@@ -85,6 +85,16 @@ For eg: **npx cypress run --spec "cypress/integration/api.spces/apiTests.js'**
    Here's how it looks in action in cypress test runner:  
    ![Intercept in action, post response replaced with example.json](cypress/images/interceptandusemocksinaction.png)
 
+## Cross browser testing
+By default, cypress run will run our tests on a headless electron browser but we can give --browser argument to run tests on a differnet browser
+
+For eg: To run our tests on a Firefox broswer, we need to make sure we have Mozilla Firefox installed on our local and then from terminal run:  
+**npx cypress run --browser firefox**
+OR to run tests on chrome, make sure you have Google chrome installked and from terminal run:
+**npx cypress run --browser chrome**
+
+
+
 
 
 
