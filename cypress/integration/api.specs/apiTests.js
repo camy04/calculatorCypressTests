@@ -2,7 +2,7 @@ describe('API tests for Integers', function() {
     
     const calApi = Cypress.env('apiUrl')
     
-    it('verify add integers', function() {
+    it('add integers', function() {
 
         const reqbody = {
             "LeftNumber" : "2",
@@ -23,7 +23,7 @@ describe('API tests for Integers', function() {
         })
     })
 
-    it('verify subtract integers', function() {
+    it('subtract integers', function() {
 
         const reqbody = {
             "LeftNumber" : "2",
@@ -46,7 +46,7 @@ describe('API tests for Integers', function() {
         })
     })
 
-    it('verify multiply integers', function() {
+    it('multiply integers', function() {
 
         const reqbody = { 
             "LeftNumber" : "2",
@@ -69,7 +69,7 @@ describe('API tests for Integers', function() {
         })
     })
 
-    it('verify division integers', function() {
+    it('divide integers', function() {
 
         const reqbody = {
             "LeftNumber" : "4",
@@ -92,7 +92,7 @@ describe('API tests for Integers', function() {
         })
     })
 
-    it('verify max value integers addition', function() {
+    it('add maximum entered values', function() {
         const reqbody = {
             "LeftNumber" : "999999999",
             "RightNumber" : "999999999",
@@ -114,10 +114,10 @@ describe('API tests for Integers', function() {
         })
     })
 
-    it('verify max value integers subtraction', function() {
+    it('subtract maximum entered values', function() {
         const reqbody = {
-            "LeftNumber" : "9999999999",
-            "RightNumber" : "9999999999",
+            "LeftNumber" : "999999999",
+            "RightNumber" : "999999999",
             "Operator" : "-"
         }
 
@@ -136,32 +136,10 @@ describe('API tests for Integers', function() {
         })
     })
 
-    it('verify more than max value integers subtraction', function() {
+    it('multiply maximum entered values', function() {
         const reqbody = {
-            "LeftNumber" : "9999999999",
-            "RightNumber" : "9999999999",
-            "Operator" : "-"
-        }
-
-        cy.request( {
-            method : 'POST',
-            url : calApi,
-            body : reqbody,
-            headers : {
-                'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
-            }
-        }).then(function(response) {
-            expect(response).to.have.property('status', 200)
-            expect(response.body).to.deep.equal( {
-                "value" : 0
-            });
-        })
-    })
-
-    it('verify more than max value integers subtraction', function() {
-        const reqbody = {
-            "LeftNumber" : "9999999999",
-            "RightNumber" : "9999999999",
+            "LeftNumber" : "999999999",
+            "RightNumber" : "999999999",
             "Operator" : "*"
         }
 
@@ -175,15 +153,15 @@ describe('API tests for Integers', function() {
         }).then(function(response) {
             expect(response).to.have.property('status', 200)
             expect(response.body).to.deep.equal( {
-                "value" : 808348673
+                "value" : 1e18
             });
         })
     })
 
-    it('verify max value integers division', function() {
+    it('divide maximum entered values', function() {
         const reqbody = {
-            "LeftNumber" : "9999999999",
-            "RightNumber" : "9999999999",
+            "LeftNumber" : "999999999",
+            "RightNumber" : "999999999",
             "Operator" : "/"
         }
 
@@ -198,6 +176,138 @@ describe('API tests for Integers', function() {
             expect(response).to.have.property('status', 200)
             expect(response.body).to.deep.equal( {
                 "value" : 1
+            });
+        })
+    })
+
+    it('add negative entered values', function() {
+        const reqbody = {
+            "LeftNumber" : "-999999999",
+            "RightNumber" : "-999999999",
+            "Operator" : "+"
+        }
+
+        cy.request( {
+            method : 'POST',
+            url : calApi,
+            body : reqbody,
+            headers : {
+                'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
+            }
+        }).then(function(response) {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.deep.equal( {
+                "value" : -1999999998
+            });
+        })
+    })
+
+    it('subtract negative entered values', function() {
+        const reqbody = {
+            "LeftNumber" : "-999999999",
+            "RightNumber" : "-999999999",
+            "Operator" : "-"
+        }
+
+        cy.request( {
+            method : 'POST',
+            url : calApi,
+            body : reqbody,
+            headers : {
+                'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
+            }
+        }).then(function(response) {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.deep.equal( {
+                "value" : 0
+            });
+        })
+    })
+
+    it('multiply negative entered values', function() {
+        const reqbody = {
+            "LeftNumber" : "-999999999",
+            "RightNumber" : "-999999999",
+            "Operator" : "*"
+        }
+
+        cy.request( {
+            method : 'POST',
+            url : calApi,
+            body : reqbody,
+            headers : {
+                'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
+            }
+        }).then(function(response) {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.deep.equal( {
+                "value" : -1e18
+            });
+        })
+    })
+
+    it('divide negative entered values', function() {
+        const reqbody = {
+            "LeftNumber" : "-999999999",
+            "RightNumber" : "-999999999",
+            "Operator" : "/"
+        }
+
+        cy.request( {
+            method : 'POST',
+            url : calApi,
+            body : reqbody,
+            headers : {
+                'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
+            }
+        }).then(function(response) {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.deep.equal( {
+                "value" : 1
+            });
+        })
+    })
+
+    it('multiply by 0', function() {
+        const reqbody = {
+            "LeftNumber" : "888888",
+            "RightNumber" : "0",
+            "Operator" : "*"
+        }
+
+        cy.request( {
+            method : 'POST',
+            url : calApi,
+            body : reqbody,
+            headers : {
+                'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
+            }
+        }).then(function(response) {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.deep.equal( {
+                "value" : 0
+            });
+        })
+    })
+
+    it('divide by 0', function() {
+        const reqbody = {
+            "LeftNumber" : "888888",
+            "RightNumber" : "0",
+            "Operator" : "/"
+        }
+
+        cy.request( {
+            method : 'POST',
+            url : calApi,
+            body : reqbody,
+            headers : {
+                'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
+            }
+        }).then(function(response) {
+            expect(response).to.have.property('status', 200)
+            expect(response.body).to.deep.equal( {
+                "value" : "indeterminate"
             });
         })
     })
