@@ -53,10 +53,23 @@ For eg: **npx cypress run --spec "cypress/integration/api.spces/apiTests.js'**
 3. After cypress run completes, Cypress automatically compresses the video in order to save on file size. By default it compresses to a 32 CRF, but this is configurable with the videoCompression property.
 4. When using the --record flag while running your tests, videos are processed, compressed, and uploaded to the Dashboard Service after every spec file runs, successful or not. To change this behavior to only process videos in the case that tests fail, set the videoUploadOnPasses configuration option to false.
 5. Cypress clears any existing videos before a cypress run. If you do not want to clear your videos folder before a run, you can set trashAssetsBeforeRuns to false.
+   [source - cypress docs](https://docs.cypress.io/guides/guides/screenshots-and-videos#Videos)
+   Here is an example from one of our local runs that shows video being processed when using cypress run:
+   ![Cypress video recorder](cypress/images/videoRunMode.png)
+
 
 ## Retries
-## Dashboard
+1. Cypress supports retrying failed tests for both open and run mode.
+2. The number of retries can be aded into cypress.json as shown below:
+   ![Cypress test retries](cypress/images/cypress-json.png)
+   Here is an example from a cypress test runner run. Attempt 1 and Attempt 2 showcase the test was retried once more after failing the first time
+   ![Cyoress retyr in action](/cypress/images/retyrOpenMode.png)
+
+
 ## Running tests on CI (Jenkins):
+1. We've provided a sample Jenkins declarative pipeline which will run all the tests inside integration folder and then publish the mochaawesome test results as a build artifact
+   ![Jenkinsfile](cypress/images/sample_jenkinsfile.png)
+   ![Jenkins Pipeline](cypress/images/calappsamplepipeline.png)
 
 
 
