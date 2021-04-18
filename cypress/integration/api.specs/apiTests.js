@@ -18,6 +18,9 @@ describe('API tests for Integers', function() {
                 'x-functions-key' : 'cYWOrJhggJO8/CHx52TfmD8AH5RdGEjSIBjHhuiHb5qnFV0jzDyngQ=='
             }
         }).then(function(response) {
+            expect(response).to.have.property('headers')
+            expect(response.headers).to.have.property('content-type', "application/json; charset=utf-8")
+            expect(response.headers).to.have.property('content-length', "132")
             expect(response).to.have.property('status', 200)
             expect(response.body).to.have.property('value', 6)
         })
