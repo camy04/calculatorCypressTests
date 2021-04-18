@@ -79,7 +79,7 @@ For eg: **npx cypress run --spec "cypress/integration/api.spces/apiTests.js'**
 1. In Cypress, the best practice is to add all your stubs/mocks json responses into cypress/fixtures dir
 2. For this project, we've mocked the response for Calculate endpoint and have added it as example.json under fixtures
 3. To intercept a network call so that you can replace the actual enpoint response with your mock, we use **cypress.intercept()**  
-   Here is an example how we've done it for POST request to calculate enpoint  
+   Here is an example that shows how I've done it for POST request to calculate endpoint  
    ![Intercept Network Request](cypress/images/cypressMocks.png)
 
    Here's how it looks in action in cypress test runner:  
