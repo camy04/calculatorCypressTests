@@ -18,9 +18,6 @@
   "homepage": "https://github.com/camy04/calculatorCypressTests#readme",
   "devDependencies": {
     "cypress": "^7.1.0",
-    "cypress-mochawesome-reporter": "^2.0.1",
-    "mochawesome": "^6.2.2",
-    "mochawesome-merge": "^4.2.0",
-    "mochawesome-report-generator": "^5.2.0"
+    "cypress-mochawesome-reporter": "^2.0.1"
   }
 }
