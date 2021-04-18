@@ -11,14 +11,13 @@ pipeline {
                 echo 'Run cypress api and fromtend tests'
                 sh "npm install cypress"
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    sh "cypress run --reporter mochawesome"
-                    echo 'tests failed'
+                    sh "npx cypress run"
                 }
              }
 
          }
 
-         stage("Publish Test results ") {
+         stage("Publish test results ") {
 
              steps {
                 echo 'Publishing Test results'
@@ -26,8 +25,8 @@ pipeline {
                     allowMissing: false,
                     alwaysLinkToLastBuild: true,
                     keepAll: true,
-                    reportDir: 'mochawesome-report',
-                    reportFiles: 'mochawesome.html',
+                    reportDir: 'cypress/report',
+                    reportFiles: 'index.html',
                     reportName: 'Test Results',
                 ]
              }

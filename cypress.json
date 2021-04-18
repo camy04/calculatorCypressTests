@@ -1,5 +1,10 @@
 {
-    "reporter": "mochawesome",
+    "reporter": "cypress-mochawesome-reporter",
+    "reporterOptions": {
+        "reportDir": "cypress/report",
+        "charts": true,
+        "reportPageTitle": "custom-title"
+    },
     "screenshotOnRunFailure": true,
     "retries": {
         "runMode": 2,

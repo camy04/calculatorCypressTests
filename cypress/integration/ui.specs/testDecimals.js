@@ -1,4 +1,4 @@
-describe('Calculator - Test Integers', function() {
+describe('Calculator - Test Decimals', function() {
 
     beforeEach(function () {
         cy.visit(Cypress.env('frontendUrl'))
