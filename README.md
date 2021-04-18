@@ -75,5 +75,17 @@ For eg: **npx cypress run --spec "cypress/integration/api.spces/apiTests.js'**
    ![Jenkins Pipeline](cypress/images/calappsamplepipeline.png)
 
 
+## Using stubs to intercept network calls
+1. In Cypress, the best practice is to add all your stubs/mocks json responses into cypress/fixtures dir
+2. For this project, we've mocked the response for Calculate endpoint and have added it as example.json under fixtures
+3. To intercept a network call so that you can replace the actual enpoint response with your mock, we use **cypress.intercept()**  
+   Here is an example how we've done it for POST request to calculate enpoint  
+   ![Intercept Network Request](cypress/images/cypressMocks.png)
+
+   Here's how it looks in action in cypress test runner:  
+   ![Intercept in action, post response replaced with example.json](cypress/images/interceptandusemocksinaction.png)
+
+
+
 
 
