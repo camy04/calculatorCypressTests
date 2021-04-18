@@ -1,4 +1,4 @@
-describe('Calculator - test boundary values', function() {
+describe('Calculator - Test maximum imput values', function() {
 
     beforeEach(function () {
         cy.visit(Cypress.env('frontendUrl'))

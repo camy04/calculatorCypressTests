@@ -9,11 +9,11 @@ describe('Calculator - Test Decimals', function() {
     })
 
     it('subtract decimals', function() {
-        cy.subtract('4.4', '2.2').should('have.value', '2.4');
+        cy.subtract('4.4', '2.2').should('have.value', '2.4')
     })
 
     it('multiply decimals', function() {
-        cy.multiply('3.5', '3.6').should('have.value', '12.6');
+        cy.multiply('3.5', '3.6').should('have.value', '12.6')
     })
     
     it('divide decimals', function() {
