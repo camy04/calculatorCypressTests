@@ -7,9 +7,11 @@ This readme explains you how to run front end and api tests for Calculator app a
 3. On terminal run: **npm install cypress --save-dev'** this will install Cypress locally as a dev dependency for your project
 4. On terminal run **'npm init'** : this will initialize the project and create a package.json for the project
 
+
 ## Editing the project/tests: 
 1. You can use Visual Studio code to view the project locally and edit it
 2. To enable editing support for cypress in VSC, install the following extensions: 'Cypress Helper' and 'Cypress Snippets'
+
 
 ## Running tests using cypress test runner
 1. To run tests via a GUI interface, on terminal run **npx cypress open**.  
@@ -28,9 +30,16 @@ By default, cypress run will run all tests headlessly in the Electron browser.
  **npx cypress run --spec "cypress/integration/api.spces/apiTests.js'**  
 apiTests.js is our spec file in this case that we want to run from command line
 
-## Test Reports
 
-### Mochawesome html test reports
+## Test Reports
+1. Because Cypress is built on top of Mocha, that means any reporter built for Mocha can be used with Cypress
+2. For this project we've choosen **mochawesome** reporter as it gives us beautiful html reports which are very easy to read.
+3. To enable mochawesome reporter, we've added **reporter** key to our config.json and set the value to **mochawesome**
+4. This will create a mochawesome-report folder in the root dir and record the test results in both html and json formats as shown in the image below
+   ![](cypress/images/mochawesomereporter.png)
+5. Here is how mochawesome report looks like:
+   ![](cypress/images/mochawesomehtmlreporter.png)
+
 
 ## Screenshots
 1. Cypress comes with the ability to take screenshots, whether you are running via cypress open or cypress run.
@@ -46,6 +55,7 @@ For eg: **npx cypress run --spec "cypress/integration/api.spces/apiTests.js'**
 3. After cypress run completes, Cypress automatically compresses the video in order to save on file size. By default it compresses to a 32 CRF, but this is configurable with the videoCompression property.
 4. When using the --record flag while running your tests, videos are processed, compressed, and uploaded to the Dashboard Service after every spec file runs, successful or not. To change this behavior to only process videos in the case that tests fail, set the videoUploadOnPasses configuration option to false.
 5. Cypress clears any existing videos before a cypress run. If you do not want to clear your videos folder before a run, you can set trashAssetsBeforeRuns to false.
+
 
 ## Dashboard
 ## Running tests on CI (Jenkins):
