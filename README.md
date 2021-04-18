@@ -33,12 +33,12 @@ apiTests.js is our spec file in this case that we want to run from command line
 
 ## Test Reports
 1. Because Cypress is built on top of Mocha, that means any reporter built for Mocha can be used with Cypress
-2. For this project we've choosen **mochawesome** reporter as it gives us beautiful html reports which are very easy to read.
+2. For this project we've choosen **mochawesome** reporter as it gives us beautiful html reports which are very easy to read
 3. To enable mochawesome reporter, we've added **reporter** key to our config.json and set the value to **mochawesome**
 4. This will create a mochawesome-report folder in the root dir and record the test results in both html and json formats as shown in the image below
    ![](cypress/images/mochawesomereporter.png)
-5. Here is how mochawesome report looks like:
-   ![](cypress/images/mochawesomehtmlreporter.png)
+5. Here is how a mochawesome report looks like for one of our spec files:
+   ![](cypress/images/mochawesomehtmlreport.png)
 
 
 ## Screenshots
