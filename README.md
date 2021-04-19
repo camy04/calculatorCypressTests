@@ -90,7 +90,7 @@ By default, cypress run will run our tests on a headless electron browser but we
 
 For eg: To run our tests on a Firefox broswer, we need to make sure we have Mozilla Firefox installed on our local and then from terminal run:  
 **npx cypress run --browser firefox**  
-OR to run tests on chrome, make sure you have Google chrome installked and from terminal run:  
+OR to run tests on chrome, make sure you have Google chrome installed and from terminal run:  
 **npx cypress run --browser chrome**
 
 
